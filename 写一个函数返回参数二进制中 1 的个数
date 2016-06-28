@@ -1,0 +1,25 @@
+#include <stdio.h>
+int count_one_bits(unsigned int a)
+{
+	int count = 0;   //相除求二进制法 ：用2相处直至结果为1 将余数和最后的1倒写
+	int b = 0;
+	while(a>0)
+	{
+		b = a%2;//1
+		if(b==1)
+			count++;
+		a = a/2;
+	}
+	if(a==1)
+		count++;
+	return count;
+}
+int main()
+{
+	int a,count;
+	printf("请输出要计算二进制中1的个数的非负十进制数：\n");
+	scanf("%d",&a);
+	count = count_one_bits(a);
+	printf("1的个数为：%d\n",count);
+        return 0；
+}
