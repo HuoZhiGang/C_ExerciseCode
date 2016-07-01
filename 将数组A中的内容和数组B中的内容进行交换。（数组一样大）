@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+	int arr1[4];
+	int arr2[4];
+	int *p1,*p2,*t;
+	int i;
+	printf("请输入第一个长度为4的数组：");
+	for(i = 0;i <4;i++)
+		scanf("%d",&arr1[i]);
+	printf("请输入第二个长度为4的数组：");
+	for(i = 0;i < 4;i++)
+		scanf("%d",&arr2[i]);
+	p1=arr1;
+	p2=arr2;
+	t=p1;
+	p1=p2;
+	p2=t;
+	printf("交换后数组一：");
+	for(i = 0;i<4;i++)
+		printf("%2d",p1[i]);
+	printf("交换后数组二：");
+	for(i = 0;i<4;i++)
+		printf("%2d",p2[i]);
+	printf("\n");
+	return 0;
+}
