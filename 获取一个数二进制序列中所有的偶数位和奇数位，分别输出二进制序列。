@@ -1,0 +1,61 @@
+获取一个数二进制序列中所有的偶数位和奇数位，分别输出二进制序列。
+#include <stdio.h>
+
+int change(unsigned a,int b_arr[])
+{
+	int i,t,count = 0;
+	while(a>0)  
+	{
+		b_arr[count] = a%2;//1
+		a = a/2;
+		count++;
+	}
+	for(i = 0;i<count/2;i++) //将数组倒置
+	{
+		t = b_arr[i];
+		b_arr[i] = b_arr[count-i-1];//减1是因为数组下标从一开始
+		b_arr[count-i-1] = t;
+	}
+	return count;//返回实际位数
+}
+
+
+
+int main() // 15  binary  1111  13  binary 1101
+{  
+	int a,i;
+	int b_arr[32];
+	int n;
+	printf("请输入一个整数，之后将会输出它的二进制序列:\n");
+	scanf("%d",&a);
+	n = change(a,b_arr);
+	printf("该整数的二进制数为：");
+	for(i = 0;i<n;i++)
+	{
+		printf("%d",b_arr[i]);
+	}
+	printf("\n");
+
+	printf("二进制数的偶数位为：");
+	for(i = 0;i<n;i++)
+	{
+		if(i%2==0)
+		printf("%d",b_arr[i]);
+		else
+			printf(" ");//补上奇数位 视觉直观
+	}
+	printf("\n");
+
+	printf("二进制数的奇数位为：");
+	for(i = 0;i<n;i+=2)
+	{
+		if(i%2!=0)
+			printf(" ");
+		else
+			printf("%d",b_arr[i]);
+	}
+	printf("\n");
+
+	return 0;
+
+}
