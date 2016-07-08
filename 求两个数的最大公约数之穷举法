@@ -1,0 +1,16 @@
+求两个数的最大公约数之相减法
+#include<stdio.h>    
+int main()  
+{  
+      
+    int a,b,c;  
+    printf("输入两个数字求最大公约数：");  
+    scanf("%d%d",&a,&b);  
+    c=(a>b)?b:a;   //三目运算符 将最小的赋给c  
+    while(a%c!=0||b%c!=0)    //a，b同时能被c整除 不执行该循环  
+    {  
+        c--;  
+    }  
+    printf("最大公约数为：%d\n",c);  
+      
+}  
