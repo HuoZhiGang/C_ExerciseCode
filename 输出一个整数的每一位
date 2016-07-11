@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>//abs() 函数为绝对值 正负整数都可以输出
+int main()
+{
+	int val;
+	int a;
+	int count=0;
+	printf("请输入一个整数，将会输出整数的每一位：");
+	scanf("%d",&val);
+	while(val!=0)
+	{
+		a = val%10;
+		count++;
+		printf("该整数的倒数第%d数字是:%d \n ",count,abs(a));
+		val=val/10;
+	}
+}
