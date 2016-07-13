@@ -1,0 +1,21 @@
+# include <stdio.h>
+int main()
+{
+	int i,t;
+	int a = 0;
+	int count=0;
+	printf("输出1到100的所有整数中出现多少次数字9：");
+	for(i = 1;i<=100;i++)
+	{
+		t=i;
+		while(t!=0)
+		{
+			a = t%10;
+			if(a==9)
+				count++;
+			t=t/10;
+		}
+	}
+	printf("1-100 9的个数为：%d \n",count);
+	return 0;
+}
