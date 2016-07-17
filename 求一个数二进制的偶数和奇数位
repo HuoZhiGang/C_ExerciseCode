@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main()
+{
+	int i;
+	int temp;
+	//0000000000000000000000000001000
+	//0000000000000000000000000000001
+	int num=-127;
+
+	for(i=31;i>=0;i-=2)
+	{
+		temp = num>>i&1;
+		printf("%d ",temp);
+	}
+	printf("\n");
+	for(i=30;i>=0;i-=2)
+	{
+		temp = num>>i&1;
+		printf(" %d",temp);
+	}
+	return 0；
+}
