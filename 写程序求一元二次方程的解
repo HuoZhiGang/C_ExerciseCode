@@ -1,0 +1,32 @@
+include<stdio.h>
+#include<math.h>
+
+#define EXP 0.00000000001
+int main()
+{
+double a,b,c;
+printf("请输入三个系数：");
+scanf("%lf%lf%lf",&a,&b,&c);
+
+if(a>-EXP&&a<EXP)
+printf("不是一元二次方程\n");
+else
+{
+double d = b*b-4*a*c;
+if((d>-EXP)&&(d<EXP))
+{
+printf("有两个相等的实根：%lf\n",-b/(2*a));
+}
+else if((d>-EXP)&&(d<EXP))
+{
+printf("有两个不相等的根:%lf %lf\n", (-b+sqrt(d))/(2*a), (-b-sqrt(d))/(2*a));
+}
+else
+{
+printf("有两个共轭的复跟.\n");
+}
+
+}
+
+return 0;
+}
