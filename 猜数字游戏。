@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <windows.h>
+
+enum PGAME
+{
+	EXIT,
+	GAME,
+};
+
+void menu()
+{
+	
+	printf("1.Play Game！\n");
+	printf("0.退出游戏\n");
+}
+
+void PlayGame()
+{
+
+	int ran = 0;
+	int n = 0;
+	srand((unsigned)time(NULL));
+	ran = rand()%100;
+	
+	while(1)
+	{
+		printf("猜多少？\n");
+		scanf("%d",&n);
+		if (n>ran)
+		{
+			printf("大了\n");
+		}
+		else if (n<ran)
+		{
+			printf("小了\n");
+		}
+		else
+		{
+			printf("猜对了\n");
+			break;
+		}
+	}
+
+	
+}
+
+int main()
+{
+	int start = 1;
+	int come;
+	while(start)
+	{
+		menu();
+		scanf("%d",&come);
+		switch(come)
+		{
+		case EXIT:
+			exit(0);
+			break;
+		case GAME:
+			PlayGame();
+			break;
+		default:
+			printf("输入有误请重新输入\n");
+			break;
+		}
+	}
+	return 0;
+	
+}
