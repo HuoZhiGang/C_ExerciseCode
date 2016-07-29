@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+char* revelve(char* a,int num)
+{
+	char *front = a;
+	char *behind = strlen(a)+a;
+	int i = 0;
+		for(i=0; i<num; i++)
+		{
+			*behind = *a;
+			behind++;
+			a++;
+			front = a;
+		}
+		return front;
+}
+int main()
+{
+	char a[50] = "AABCD";
+	printf("%s\n",revelve(a,2));
+	return 0;
+}
